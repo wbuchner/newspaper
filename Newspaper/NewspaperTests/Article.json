@@ -1,0 +1,320 @@
+[
+    {
+        "id": 1520644925,
+        "categories": [
+            {
+                "name": "Residential",
+                "sectionPath": "/real-estate/residential",
+                "orderNum": 0
+            }
+        ],
+        "authors": [
+            {
+                "name": "Michael Bleby",
+                "title": "Senior Reporter",
+                "email": "mbleby@afr.com.au",
+                "relatedAssets": [],
+                "relatedImages": [
+                    {
+                        "id": 1030202028,
+                        "categories": [],
+                        "brands": [],
+                        "authors": [],
+                        "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/1/c/s/z/0/image.imgtype.afrWoodcutAuthorImage.140x140.png/1553561488738.png",
+                        "lastModified": 1553561488738,
+                        "sponsored": false,
+                        "description": "",
+                        "photographer": "",
+                        "type": "afrWoodcutAuthorImage",
+                        "width": 140,
+                        "height": 140,
+                        "assetType": "IMAGE",
+                        "timeStamp": 1553561488738
+                    }
+                ]
+            }
+        ],
+        "url": "http://www.afr.com/real-estate/residential/renters-turn-first-home-buyers-as-opportunity-opens-up-20230302-p5cp4t",
+        "lastModified": 1678073492342,
+        "sponsored": false,
+        "headline": "Renters turn first home buyers as opportunity opens up",
+        "indexHeadline": "Renters turn first home buyers as opportunity opens up",
+        "tabletHeadline": "",
+        "theAbstract": "With an estimated gap of 12 to 24 months before rising rental yields draw investors back in to parts of the market, some first-time buyers are diving in.",
+        "byLine": "Michael Bleby",
+        "acceptComments": false,
+        "numberOfComments": 0,
+        "relatedAssets": [
+            {
+                "id": 1520645342,
+                "categories": [
+                    {
+                        "name": "Residential",
+                        "sectionPath": "/real-estate/residential",
+                        "orderNum": 0
+                    }
+                ],
+                "authors": [
+                    {
+                        "name": "Larry Schlesinger",
+                        "title": "Reporter",
+                        "email": "larry.schlesinger@afr.com.au",
+                        "relatedAssets": [],
+                        "relatedImages": [
+                            {
+                                "id": 1030200199,
+                                "categories": [],
+                                "brands": [],
+                                "authors": [],
+                                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/1/c/r/k/7/image.imgtype.afrWoodcutAuthorImage.140x140.png/1553476792466.png",
+                                "lastModified": 1553476792466,
+                                "sponsored": false,
+                                "description": "",
+                                "photographer": "",
+                                "type": "afrWoodcutAuthorImage",
+                                "width": 140,
+                                "height": 140,
+                                "assetType": "IMAGE",
+                                "timeStamp": 1553476792466
+                            }
+                        ]
+                    }
+                ],
+                "url": "http://www.afr.com/real-estate/residential/stock-is-so-tight-right-now-auction-clearances-push-over-70pc-20230304-p5cpge",
+                "lastModified": 1677996968383,
+                "sponsored": false,
+                "assetType": "ARTICLE",
+                "headline": "‘Stock is so tight right now’: auction clearances push over 70pc",
+                "timeStamp": 1677978578000
+            },
+            {
+                "id": 1520641542,
+                "categories": [
+                    {
+                        "name": "National",
+                        "sectionPath": "/news/politics/national",
+                        "orderNum": 0
+                    }
+                ],
+                "authors": [],
+                "url": "http://www.afr.com/news/politics/national/meet-the-millennials-giving-up-on-homeownership-20230221-p5cmiu",
+                "lastModified": 1677053261254,
+                "sponsored": false,
+                "assetType": "ARTICLE",
+                "headline": "Meet the Millennials giving up on home ownership",
+                "timeStamp": 1677047726000
+            }
+        ],
+        "relatedImages": [
+            {
+                "id": 1031763889,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/1/image.related.afrArticleLead.1536x1010.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057442936,
+                "sponsored": false,
+                "description": "The 2-bedroom, 2-bathroom apartment in the Lucent building at 1802/225 Pacific Highway in North Sydney sold by private treaty for $1.35 million.",
+                "photographer": "  ",
+                "type": "afrArticleLead",
+                "width": 1536,
+                "height": 1010,
+                "assetType": "IMAGE",
+                "xLarge@2x": "",
+                "large@2x": "",
+                "timeStamp": 1678057442936
+            },
+            {
+                "id": 1031763889,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/1/image.related.articleLeadwide.1500x844.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057442936,
+                "sponsored": false,
+                "description": "The 2-bedroom, 2-bathroom apartment in the Lucent building at 1802/225 Pacific Highway in North Sydney sold by private treaty for $1.35 million.",
+                "photographer": "  ",
+                "type": "articleLeadWide",
+                "width": 1500,
+                "height": 844,
+                "assetType": "IMAGE",
+                "xLarge@2x": "",
+                "xLarge": "",
+                "large@2x": "",
+                "large": "",
+                "thumbnail@2x": "",
+                "thumbnail": "",
+                "timeStamp": 1678057442936
+            },
+            {
+                "id": 1031763898,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/a/image.related.wideLandscape.1500x844.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057552607,
+                "sponsored": false,
+                "description": "Second time around: The east-facing apartment failed to sell in an auction campaign last year. ",
+                "photographer": " ",
+                "type": "wideLandscape",
+                "width": 1500,
+                "height": 844,
+                "assetType": "IMAGE",
+                "xLarge@2x": "",
+                "xLarge": "",
+                "large@2x": "",
+                "large": "",
+                "thumbnail@2x": "",
+                "thumbnail": "",
+                "timeStamp": 1678057552607
+            },
+            {
+                "id": 1031763898,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/a/image.related.thumbnail.375x250.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057552607,
+                "sponsored": false,
+                "description": "Second time around: The east-facing apartment failed to sell in an auction campaign last year. ",
+                "photographer": " ",
+                "type": "thumbnail",
+                "width": 375,
+                "height": 250,
+                "assetType": "IMAGE",
+                "timeStamp": 1678057552607
+            },
+            {
+                "id": 1031763898,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/a/image.related.articleLeadwide.1500x844.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057552607,
+                "sponsored": false,
+                "description": "Second time around: The east-facing apartment failed to sell in an auction campaign last year. ",
+                "photographer": " ",
+                "type": "articleLeadWide",
+                "width": 1500,
+                "height": 844,
+                "assetType": "IMAGE",
+                "xLarge@2x": "",
+                "xLarge": "",
+                "large@2x": "",
+                "large": "",
+                "thumbnail@2x": "",
+                "thumbnail": "",
+                "timeStamp": 1678057552607
+            },
+            {
+                "id": 1031763898,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/a/image.related.afrIndexLead.1536x1010.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057552607,
+                "sponsored": false,
+                "description": "Second time around: The east-facing apartment failed to sell in an auction campaign last year. ",
+                "photographer": " ",
+                "type": "afrIndexLead",
+                "width": 1536,
+                "height": 1010,
+                "assetType": "IMAGE",
+                "xLarge@2x": "",
+                "xLarge": "",
+                "large@2x": "",
+                "large": "",
+                "thumbnail@2x": "",
+                "thumbnail": "",
+                "timeStamp": 1678057552607
+            },
+            {
+                "id": 1031763898,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/a/image.related.landscape.1174x783.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057552607,
+                "sponsored": false,
+                "description": "Second time around: The east-facing apartment failed to sell in an auction campaign last year. ",
+                "photographer": " ",
+                "type": "landscape",
+                "width": 1174,
+                "height": 783,
+                "assetType": "IMAGE",
+                "large@2x": "",
+                "large": "",
+                "thumbnail@2x": "",
+                "thumbnail": "",
+                "timeStamp": 1678057552607
+            },
+            {
+                "id": 1031763898,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/a/image.related.afrArticleInline.620x0.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057552607,
+                "sponsored": false,
+                "description": "Second time around: The east-facing apartment failed to sell in an auction campaign last year. ",
+                "photographer": " ",
+                "type": "afrArticleInline",
+                "width": 620,
+                "height": 0,
+                "assetType": "IMAGE",
+                "timeStamp": 1678057552607
+            },
+            {
+                "id": 1031763895,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/7/image.related.articleLeadwide.1500x844.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057545221,
+                "sponsored": false,
+                "description": "But a turning of the market since the end of last year has given first home buyers a chance to jump in.",
+                "photographer": " ",
+                "type": "articleLeadWide",
+                "width": 1500,
+                "height": 844,
+                "assetType": "IMAGE",
+                "xLarge@2x": "",
+                "xLarge": "",
+                "large@2x": "",
+                "large": "",
+                "thumbnail@2x": "",
+                "thumbnail": "",
+                "timeStamp": 1678057545221
+            },
+            {
+                "id": 1031763895,
+                "categories": [],
+                "brands": [],
+                "authors": [],
+                "url": "https://www.fairfaxstatic.com.au/content/dam/images/h/2/a/a/4/7/image.related.afrArticleInline.620x0.p5cp4t.13zzqx.png/1678096659717.jpg",
+                "lastModified": 1678057545221,
+                "sponsored": false,
+                "description": "But a turning of the market since the end of last year has given first home buyers a chance to jump in.",
+                "photographer": " ",
+                "type": "afrArticleInline",
+                "width": 620,
+                "height": 0,
+                "assetType": "IMAGE",
+                "timeStamp": 1678057545221
+            }
+        ],
+        "companies": [],
+        "legalStatus": "None",
+        "sources": [
+            {
+                "tagId": "AFR"
+            }
+        ],
+        "assetType": "ARTICLE",
+        "overrides": {
+            "overrideHeadline": "Renters turn first home buyers as opportunity opens up",
+            "overrideAbstract": "With an estimated gap of 12 to 24 months before rising rental yields draw investors back in to parts of the market, some first-time buyers are diving in."
+        },
+        "timeStamp": 1678059851000
+    }
+]
