@@ -4,16 +4,16 @@ import Foundation
 @testable import Newspaper
 
 extension Decodable {
-    static func decode(file: String, bundle: Bundle = .test) throws -> [RelatedImage]? {
+    static func decode(file: String, bundle: Bundle = .test) throws -> [Self]? {
         guard let url = Bundle.test.url(forResource: file, withExtension: nil) else {
             throw FileNotFound()
         }
         let data = try Data(contentsOf: url)
-        return try JSONDecoder().decode([RelatedImage].self, from: data)
+        return try JSONDecoder().decode([Self].self, from: data)
     }
 
-    static func decode(json: String) throws -> [RelatedImage]? {
-        return try JSONDecoder().decode([RelatedImage].self, from: json.data(using: .utf8)!)
+    static func decode(json: String) throws -> [Self]? {
+        return try JSONDecoder().decode([Self].self, from: json.data(using: .utf8)!)
     }
 }
 

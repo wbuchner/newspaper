@@ -60,7 +60,7 @@ struct Article: Decodable {
     let assetType: AssetType?
     let overrides: Overrides?
     let timeStamp: Int?
-    
+
     struct Category: Decodable {
         let name : String?
         let sectionPath: String?
@@ -80,7 +80,7 @@ struct Article: Decodable {
         let title: String?
         let email: String?
         let relatedAssets: [String]?
-        let remaltedImages: [RelatedImage]?
+        let relatedImages: [RelatedImage]?
         let url: String?
         let lastModified: Int?
         let sponsored: Bool?
