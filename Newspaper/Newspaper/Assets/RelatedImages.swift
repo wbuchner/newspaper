@@ -80,11 +80,26 @@ extension RelatedImage {
     var lastModifiedDate: Date? { lastModified?.fromUnixTimeStamp() }
     var timestampDate: Date? { timeStamp?.fromUnixTimeStamp() }
 }
+
 extension RelatedImage {
     enum CodingKeys: String, CodingKey  {
         case xLarge2x = "xLarge@2x"
         case large2x = "large@2x"
         case id, categories, brands, authors, url, lastModified, sponsored, description
         case photographer, type, width, height, assetType, large, thumbnail, timeStamp
+    }
+}
+
+extension Sequence where Iterator.Element == RelatedImage {
+
+    func sortSmallest() -> [Iterator.Element] {
+        return self.sorted { (item1, item2) -> Bool in
+            guard let width1 = item1.width, let width2 = item2.width,
+                  let height1 = item1.height, let height2 = item2.height else {
+                return false
+            }
+            return width1 < width2 &&
+            height1 < height2
+        }
     }
 }
