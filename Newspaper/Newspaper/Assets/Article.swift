@@ -7,7 +7,39 @@
 
 import Foundation
 
-struct Article: Decodable {
+struct Articles: Decodable {
+    let id: Int
+    let categories: [Article.Category]?
+    let authors: [Article.Author]?
+    let url: String?
+    let lastModified: Int?
+    let onTime: Int?
+    let sponsored: Bool?
+    let displayName: String?
+    let assets: [Article]?
+    let relatedAssets: [RelatedAssets]?
+    let relatedImages: [RelatedImage]?
+}
+
+struct Article: Decodable, Equatable {
+    static func == (lhs: Article, rhs: Article) -> Bool {
+        lhs.id != rhs.id
+    }
+
+    enum SignPost {
+        case EXCLUSIVE
+        case OPINION
+        case Error
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let status = try? container.decode(String.self)
+            switch status {
+            case "EXCLUSIVE": self = .EXCLUSIVE
+            case "OPINION": self = .OPINION
+            default: self = .Error
+            }
+        }
+    }
 
     enum AssetType {
         case IMAGE
@@ -54,12 +86,19 @@ struct Article: Decodable {
     let numberOfComments: Int?
     let relatedAssets: [RelatedAssets]?
     let relatedImages: [RelatedImage]?
-    let companies: [String]?
-    var legalStatus: LegalStatus?
+    let companies: [Company]?
+    let legalStatus: LegalStatus?
+    let signPost: SignPost?
     let sources: [Source]?
     let assetType: AssetType?
     let overrides: Overrides?
-    let timeStamp: Int?
+    let timeStamp: Int
+    // Computed property for the smallest image for thumbnail
+    var thumbnail: RelatedImage? {
+        relatedImages?.sortSmallest()
+            .filter { $0.width != 0 && $0.height != 0 }
+            .first
+    }
 
     struct Category: Decodable {
         let name : String?
@@ -75,6 +114,7 @@ struct Article: Decodable {
         let overrideHeadline: String?
         let overrideAbstract: String?
     }
+
     struct Author: Decodable {
         let name: String?
         let title: String?
@@ -88,8 +128,18 @@ struct Article: Decodable {
         let headline: String?
         let timeStamp: Int?
     }
+
+    struct Company: Decodable {
+        let id: Int?
+        let companyCode: String?
+        let companyName: String?
+        let abbreviatedName: String?
+        let exchange: String?
+        let companyNumber: String?
+    }
 }
 
 
 extension Article.AssetType: Decodable {}
 extension Article.LegalStatus: Decodable {}
+extension Article.SignPost: Decodable {}

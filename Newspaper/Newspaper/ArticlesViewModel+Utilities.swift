@@ -9,11 +9,16 @@ import Foundation
 
 extension ArticlesViewModel {
 
-    private func sortArticles() {
-
+    static func sortArticles(articles: [Article]) -> [Article] {
+        articles.sortListElements()
     }
+}
 
-    func fetchThumbnail() {
-        
+extension Sequence where Iterator.Element == Article {
+
+    func sortListElements() -> [Iterator.Element] {
+        self.sorted { (item1, item2) -> Bool in
+            return item1.timeStamp < item2.timeStamp
+        }
     }
 }
