@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Articles: Decodable {
+struct Articles: Decodable, Identifiable {
     let id: Int
     let categories: [Article.Category]?
     let authors: [Article.Author]?
@@ -21,7 +21,7 @@ struct Articles: Decodable {
     let relatedImages: [RelatedImage]?
 }
 
-struct Article: Decodable, Equatable {
+struct Article: Decodable, Equatable, Identifiable {
     static func == (lhs: Article, rhs: Article) -> Bool {
         lhs.id != rhs.id
     }

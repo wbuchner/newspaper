@@ -9,6 +9,7 @@
 import Foundation
 
 struct Configuration {
+    // https://bruce-v2-mob.fairfaxmedia.com.au/1/coding_test/13ZZQX/full
     var baseURL: URL? { URL(string: "https://bruce-v2-mob.fairfaxmedia.com.au") }
     var path: URL? { baseURL?.appendingPathComponent("/1/coding_test/13ZZQX/full") }
 }

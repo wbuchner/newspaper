@@ -29,6 +29,7 @@ struct RelatedImage: Decodable, Hashable {
     let large: String?
     let thumbnail: String?
     let timeStamp: Int?
+    var thumbnailURL: URL { URL(string: url ?? "")! }
 
     init(id: Int, categories: [String]?, brands: [String]?, authors: [String]?, url: String?, lastModified: Int?, sponsored: Bool?, description: String?, photographer: String?, type: String?, width: CGFloat?, height: CGFloat?, assetType: Article.AssetType?, xLarge2x: String?, large2x: String?, large: String?, thumbnail: String?, timeStamp: Int?) {
         self.id = id

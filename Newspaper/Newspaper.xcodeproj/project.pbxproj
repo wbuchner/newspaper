@@ -35,6 +35,7 @@
 		99EACC3B29BAA53F0077C684 /* ArticlesViewModel+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EACC3A29BAA53F0077C684 /* ArticlesViewModel+Utilities.swift */; };
 		99EACC4029BAA8BB0077C684 /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 99EACC3F29BAA8BB0077C684 /* articles.json */; };
 		99EACC4329BD3F4D0077C684 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 99EACC4229BD3F4D0077C684 /* Kingfisher */; };
+		99EACC4629BDDCA00077C684 /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 99EACC4529BDDCA00077C684 /* articles.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		99E62D2929B95228001DA07C /* ArticlesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModelTests.swift; sourceTree = "<group>"; };
 		99EACC3A29BAA53F0077C684 /* ArticlesViewModel+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewModel+Utilities.swift"; sourceTree = "<group>"; };
 		99EACC3F29BAA8BB0077C684 /* articles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
+		99EACC4529BDDCA00077C684 /* articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		99E62CD829B69F33001DA07C /* Newspaper */ = {
 			isa = PBXGroup;
 			children = (
+				99EACC4429BDDAAE0077C684 /* Resources */,
 				99E62D0929B6A5C1001DA07C /* NewsClient.swift */,
 				99E62D0629B6A08E001DA07C /* Assets */,
 				99E62D0329B69FD5001DA07C /* Resoources */,
@@ -211,6 +214,14 @@
 				99E62D1529B6B7C3001DA07C /* Decodable+Extensions.swift */,
 			);
 			path = TestExtensions;
+			sourceTree = "<group>";
+		};
+		99EACC4429BDDAAE0077C684 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99EACC4529BDDCA00077C684 /* articles.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99E62CE129B69F36001DA07C /* Preview Assets.xcassets in Resources */,
+				99EACC4629BDDCA00077C684 /* articles.json in Resources */,
 				99E62CDE29B69F36001DA07C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

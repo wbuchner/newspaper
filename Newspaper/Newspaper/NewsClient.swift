@@ -9,15 +9,15 @@ import Foundation
 
 class NewsClient: ObservableObject {
 
-    @Published var articles = [Article]()
-
-    @MainActor func fetch(url: URL?) async throws -> [Article]? {
+    @MainActor func fetch(url: URL?) async throws -> Articles? {
         guard let url = url else {
             throw RequestErrors.missingURL
         }
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw RequestErrors.errorFetchingData }
-        return try JSONDecoder().decode([Article].self, from: data)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw RequestErrors.errorFetchingData
+        }
+        return try JSONDecoder().decode(Articles.self, from: data)
     }
 }
