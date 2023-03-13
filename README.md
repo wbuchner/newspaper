@@ -14,7 +14,7 @@ The `ArticlesViewModel` controls the viewState and UI switches the state in a co
 
 `RequestErrors` enum was constructed to throw and identify specific api and decoding errors. These errors are specific to the Client, however a model could throw their own unique errors for JSON decoding etc, isolating it where the mapping of the error occurred for easier debugging or analytics.
 
-The Client used `async await` to send a simple request to the api and JSON Decodes the response and returns an array of `Articles` to the `ArticlesViewModel`. Why an [Articles], given there model shows Categories I make an assumption here that many catogories could be returned in the response.
+The Client uses `async await` to send a simple request to the api and JSON Decodes the response and returns an array of `Articles` to the `ArticlesViewModel`. Why an [Articles], given there model shows Categories I make an assumption here that many catogories could be returned in the response.
 
 I have included Unit tests for inspection that tests:
 1. Model --> JSON parsing
@@ -34,13 +34,17 @@ To trigger `success` add `HTTP/1.1 200 OK`
 To trigger `failure` add `HTTP/1.1 400 Bad Request` to the header (or break the JSON)
 
 ### Dependency Acknowledgements
-1. Kingfisher. I use Kingfisher in commercial applications because it is a lightweight native Swift Library with excellent caching abilities and is extremely simple to use.
+1. Kingfisher. I use Kingfisher in commercial applications. It is a lightweight native Swift Library with excellent caching abilities and is extremely simple to use.
 
 ## Outcome
 #### A few known SwiftUI issues. Y
-1. You may notice some Purple Warnings `his method should not be called on the main thread as it may lead to UI unresponsiveness.` This a known swiftUI issue and is documented. It can be ignored.
-2. Local strings. Given this is simply a coding challenge, for the limited number of strings required I opted to simply add them locally as opposed to setting up a Strings file.
-3. I went overboard when it came to mapping the JSON object from the response. I could have halved my time if I didnt bother but I noticed some interesting issues like custom coding keys and haven't had to build solutions for them in a long time and enjoyed the challenge. 
+1. You may notice some Purple Warnings `this method should not be called on the main thread as it may lead to UI unresponsiveness.` 
+   This a known swiftUI issue and is documented. It can be ignored.
+![Screenshot 2023-03-14 at 9 58 09 am](https://user-images.githubusercontent.com/241315/224850881-dcbcd2ea-d332-4652-88c0-04b58e6b2de3.png)
+
+2. Local strings. Given this is simple a coding challenge, for the limited number of strings required I opted to add them locally as opposed to setting up a Strings file.
+
+3. I went overboard mapping the JSON respponse. I could have halved my time, but I noticed some interesting issues like custom coding keys and haven't needed to build solutions for them in a long time and enjoyed the challenge. 
 
 ## Suggestions
-For any future code challenges, it would be nice to include a Data Model of the response. Many companies I have worked at supply a contract as the Sole Truth. I have added a link here for a swagger suggestion to include so there was no guess work building the model. It would also be much nice to not have to make everything `Optional` you might notice that, in one occassion, the thumbnail URL I made it mandatory, my assumption being there would be a simple resolution for missing thumbnail images built into whichever image api youare using. This [swagger](https://eacp.energyaustralia.com.au/codingtest/api-docs/) document was included in a previous Code Challenge.
+For any future code challenges, it would be nice to include a Data Model of the response. Many companies I have worked at supply a contract as the `Sole Truth`. I have added a link here for a swagger suggestion to include so there is no guess work building a model. It would also be nicer to not make everything `Optional`, you might notice that. I made the thumbnail URL mandatory, my assumption being there would be a simple resolution for missing thumbnail images built into the backend api. This [swagger](https://eacp.energyaustralia.com.au/codingtest/api-docs/) document was included in a previous Code Challenge.
