@@ -7,4 +7,5 @@ There are three states to the UI
 2. loaded([CategoryViewModel])
 3. failure(RequestErrors)
 
-![loading_states](https://user-images.githubusercontent.com/241315/224616810-b7976b2d-6a8f-4872-ab9a-82eca2cdc6db.png)
+![loading_states](https://user-images.githubusercontent.com/241315/224616954-c3fceb7b-6cd7-4cf2-aeb7-a2e20473b53d.png)
+
