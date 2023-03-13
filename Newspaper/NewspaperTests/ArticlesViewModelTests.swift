@@ -79,4 +79,21 @@ final class ArticlesViewModelTests: XCTestCase {
         XCTAssertEqual(article.thumbnail?.width, 375.0)
         XCTAssertEqual(article.thumbnail?.height, 250.0)
     }
+
+    func testAccessibility() async throws {
+        // A $28k ‘polish’ helped this north shore home break record by $1m by Michael Bleby, on Monday, March 13, 2023, Double tap to select article
+
+        // given
+        let viewModel = ArticlesViewModel(client: client)
+        var state = await viewModel.$viewState.first().values.first(where: { _ in true })
+        // when
+        try? await viewModel.fetchArticles(url: Configuration().path)
+        state = await viewModel.$viewState.first().values.first(where: { _ in true })
+        if case .loaded(let model) = state {
+            let article = try XCTUnwrap(model.first?.articles.first)
+            XCTAssertEqual(
+                "Silicon Valley Bank collapse: Unpredictable contagion and big risk lessons by James Thomson, on Saturday, March 11, 2023, Double tap to select article",
+                article.accessibility.label)
+        }
+    }
 }

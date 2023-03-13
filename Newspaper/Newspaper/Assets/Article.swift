@@ -93,16 +93,23 @@ struct Article: Decodable, Equatable, Identifiable {
     let assetType: AssetType?
     let overrides: Overrides?
     let timeStamp: Int
-    // Computed property for the smallest image for thumbnail,
-    // Removes any images where a dimension == 0 to ensure smallest
-    // image is retured for the thumbnail. Why did I not just return the URL?
-    // not sure but since there are no specific requirements, its just as easy.
+
+    /// thumbnail
+    /// - Returns the smallest thumbnail and filters out any with dimensions of 0
     var thumbnail: RelatedImage? {
         relatedImages?.sortSmallest()
             .filter { $0.width != 0 && $0.height != 0 }
             .first
     }
 
+    var accessibility: AccessibilityInfo {
+        AccessibilityInfo(label: [
+            headline ?? "unknown title",
+            " by \(byLine ?? "unknown author"),",
+            " on \(lastModified?.fromUnixTimeStamp()?.toStringDescription() ?? "unknown"),",
+            " Double tap to select article"
+        ].lazy.joined())
+    }
     struct Category: Decodable {
         let name : String?
         let sectionPath: String?

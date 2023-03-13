@@ -13,3 +13,9 @@ extension Int {
         return date
     }
 }
+
+extension Date {
+    func toStringDescription() -> String {
+        self.formatted(date: .complete, time: .omitted)
+    }
+}
