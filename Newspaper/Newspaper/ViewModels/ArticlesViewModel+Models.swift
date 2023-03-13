@@ -14,6 +14,16 @@ extension ArticlesViewModel {
     struct CategoryViewModel: Identifiable {
         let id = UUID()
         let categoryDisplayName: String
-        let articles: [Article]
+        let articles: [ArticleViewModel]
+    }
+
+    struct ArticleViewModel: Identifiable {
+        let id = UUID()
+        let headline: String
+        let theAbstract: String
+        let byLine: String
+        let thumbnailURL: URL
+        let accessibility: AccessibilityInfo
+        let link: String
     }
 }
