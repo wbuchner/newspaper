@@ -84,10 +84,21 @@ private extension ContentView {
                                 .cornerRadius(20)
                                 .shadow(radius: 5)
                                 .aspectRatio(contentMode: .fit)
-                        Text(asset.theAbstract ?? "").font(.title3)
-                        Text(asset.byLine ?? "").font(.subheadline)
+                                .accessibilityHidden(true)
+                        Text(asset.headline ?? "")
+                            .font(.headline)
+                        Text(asset.theAbstract ?? "")
+                            .font(.title3)
+                            .accessibilityHidden(true)
+                        Text(asset.byLine ?? "")
+                            .font(.subheadline)
+                            .accessibilityHidden(true)
                         Spacer()
-                    }.padding(10)
+                    }
+                    .accessibilityHidden(false)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel(asset.accessibility.label)
+                    .padding(10)
                     .onTapGesture {
                         $selectedItem.wrappedValue = asset
                     }.sheet(item: $selectedItem) { asset in

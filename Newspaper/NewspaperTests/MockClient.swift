@@ -10,7 +10,7 @@ import Foundation
 @testable import Newspaper
 
 class MockNewsClient: NewsClient {
-    @MainActor override func fetch(url: URL?) async throws -> [Articles]? {
-        return try? Articles.decode(file: "Article.json", bundle: .test)
+    @MainActor override func fetch(url: URL?) async throws -> Articles? {
+        return try? Articles.decodeDict(file: "articles.json", bundle: .test)
     }
 }
