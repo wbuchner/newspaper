@@ -8,6 +8,7 @@ There are three states to the UI
 3. failure(RequestErrors)
 
 ![loading_states](https://user-images.githubusercontent.com/241315/224616954-c3fceb7b-6cd7-4cf2-aeb7-a2e20473b53d.png)
+![ipad_loaded_state](https://user-images.githubusercontent.com/241315/224619717-38da1e8b-be5d-4e68-809a-d6dc830e2b95.png)
 
 The `ArticlesViewModel` controls the viewState and UI switches the state in a container in the main `ContentView` to return the correct view.
 
