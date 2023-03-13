@@ -53,6 +53,7 @@ struct RelatedImage: Decodable, Hashable {
     }
 }
 
+/// Related Image requires custom coding keys, a custom init is then required
 extension RelatedImage {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -78,11 +79,13 @@ extension RelatedImage {
 }
 
 extension RelatedImage {
+    // Unrequired but fun to play with computed values
     var lastModifiedDate: Date? { lastModified?.fromUnixTimeStamp() }
     var timestampDate: Date? { timeStamp?.fromUnixTimeStamp() }
 }
 
 extension RelatedImage {
+    /// Custom coding keys to support alt characters
     enum CodingKeys: String, CodingKey  {
         case xLarge2x = "xLarge@2x"
         case large2x = "large@2x"
@@ -93,6 +96,7 @@ extension RelatedImage {
 
 extension Sequence where Iterator.Element == RelatedImage {
 
+    /// Returns the smallest image for the Thumbnail based on
     func sortSmallest() -> [Iterator.Element] {
         return self.sorted { (item1, item2) -> Bool in
             guard let width1 = item1.width, let width2 = item2.width,

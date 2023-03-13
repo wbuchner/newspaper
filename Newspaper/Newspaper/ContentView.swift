@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
-import WebKit
 import Kingfisher
 
 struct ContentView: View {
+    // An Observable View Model
     @StateObject private var viewModel = ArticlesViewModel()
+
+    // The selected asset
+    @State private(set) var selectedItem : Article?
 
     var body: some View {
         container {
             switch viewModel.viewState {
             case .loaded(let items):
-                articleView(articles: items)
+                assetView(articles: items)
             case .loading:
                 loadingView
             case .failure(let error):
@@ -37,6 +40,8 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+
+    // This container allows the interface to display multipler SwiftUI Views
     func container<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
         VStack {
             VStack(spacing: 0) {
@@ -48,14 +53,20 @@ private extension ContentView {
         .accentColor(.red)
     }
 
-    func articleView(articles: [ArticlesViewModel.CategoryViewModel]) -> some View {
-        List(articles) { article in
+    // Addaptive colums with set width and Heights
+    var columns: [GridItem] {
+        return [
+            .init(.adaptive(minimum: 300, maximum: 400 ), alignment: .top)
+        ]
+    }
 
-            Section(header: Text(article.categoryDisplayName).fontWeight(.bold)) {
+    // View displayed when the `ArticlesViewModel` viewState == .loaded
+    func assetView(articles: [ArticlesViewModel.CategoryViewModel]) -> some View {
 
-                ForEach(article.articles) { asset in
-
-                    VStack(alignment: .leading, spacing: 6) {
+        ScrollView {
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 0) {
+                ForEach(articles.first!.articles) { asset in
+                    LazyVStack(alignment: .leading, spacing: 12) {
                         KFImage.url(asset.thumbnail?.thumbnailURL)
                             .setProcessor(DefaultImageProcessor.default)
                             .placeholder {
@@ -67,29 +78,34 @@ private extension ContentView {
                             .loadDiskFileSynchronously()
                             .cacheMemoryOnly()
                             .fade(duration: 0.25)
-                            .cancelOnDisappear(true)
+                            .cancelOnDisappear(false)
                             .resizable()
-                                .frame(width: 175, height: 128)
+                            .frame(minWidth: 175, maxWidth: .infinity, minHeight: 128)
                                 .cornerRadius(20)
                                 .shadow(radius: 5)
                                 .aspectRatio(contentMode: .fit)
-
-
-
-                        Text(asset.theAbstract ?? "").font(.title2)
+                        Text(asset.theAbstract ?? "").font(.title3)
                         Text(asset.byLine ?? "").font(.subheadline)
+                        Spacer()
+                    }.padding(10)
+                    .onTapGesture {
+                        $selectedItem.wrappedValue = asset
+                    }.sheet(item: $selectedItem) { asset in
+                        LinkView(url: asset.url!)
                     }
                 }
             }
         }
     }
 
+    // View displayed when the `ArticlesViewModel` viewState == .loading
     var loadingView: some View {
         Color(.white)
             .ignoresSafeArea()
             .overlay(ProgressView())
     }
 
+    // View displayed when the `ArticlesViewModel` viewState == .error
     func errorView(error: RequestErrors) -> some View {
         container {
             switch error {
@@ -113,36 +129,11 @@ private extension ContentView {
             }
         }
     }
-
-    func linkView(url: String?) -> some View {
-        return WebView(urlString: url)
-    }
-}
-
-struct WebView: UIViewRepresentable {
-    let urlString: String?
-    func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
-    }
-
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        if let safeString = urlString {
-            if let url = URL(string: safeString) {
-                let request = URLRequest(url: url)
-                uiView.load(request)
-            }
-        }
-    }
-}
-
-struct LinkView: View {
-    var body: some View {
-        WebView(urlString: "https://google.com")
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    // For SwiftUI preview in the Canvas
     static var previews: some View {
-        ContentView().articleView(articles:  try! [ArticlesViewModel.example()])
+        ContentView().assetView(articles:  try! [ArticlesViewModel.example()])
     }
 }

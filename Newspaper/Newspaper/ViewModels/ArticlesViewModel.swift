@@ -22,7 +22,8 @@ class ArticlesViewModel: ObservableObject {
         viewState = .loading
         self.client = client
     }
-
+    /// ViewState
+    /// loading states for the view
     enum ViewState: Equatable {
         static func == (lhs: ArticlesViewModel.ViewState, rhs: ArticlesViewModel.ViewState) -> Bool {
             switch (lhs, rhs) {
@@ -43,6 +44,10 @@ class ArticlesViewModel: ObservableObject {
         case failure(RequestErrors)
     }
 
+    /// fetchArticles
+    /// - Parameter url: String
+    /// - wraps a value the `.loaded` `viewState` based on success of the `NewsClient` call
+    /// - throws an wrapped error in the `viewState`
     @MainActor func fetchArticles(url: URL?) async throws {
         viewState = .loading
         guard let url else {
@@ -67,18 +72,14 @@ class ArticlesViewModel: ObservableObject {
         }
     }
 
+    /// updateArticles
+    /// - updates the wrapped value in the `.error` `viewState`
     private func updateArticles() {
         guard case .loaded = viewState else {
             viewState = .failure(RequestErrors.errorFetchingData)
             isErrorHidden = false
             return
         }
-    }
-
-    struct CategoryViewModel: Identifiable {
-        let id = UUID()
-        let categoryDisplayName: String
-        let articles: [Article]
     }
 }
 

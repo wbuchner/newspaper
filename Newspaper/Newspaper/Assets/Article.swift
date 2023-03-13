@@ -93,7 +93,10 @@ struct Article: Decodable, Equatable, Identifiable {
     let assetType: AssetType?
     let overrides: Overrides?
     let timeStamp: Int
-    // Computed property for the smallest image for thumbnail
+    // Computed property for the smallest image for thumbnail,
+    // Removes any images where a dimension == 0 to ensure smallest
+    // image is retured for the thumbnail. Why did I not just return the URL?
+    // not sure but since there are no specific requirements, its just as easy.
     var thumbnail: RelatedImage? {
         relatedImages?.sortSmallest()
             .filter { $0.width != 0 && $0.height != 0 }
