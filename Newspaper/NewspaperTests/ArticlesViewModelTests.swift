@@ -20,7 +20,10 @@ final class ArticlesViewModelTests: XCTestCase {
         // given
         let viewModel = ArticlesViewModel(client: client)
         let articles: [Article] = try! Article.decode(file: "Article.json", bundle: .test)!
-
+        let model = ArticlesViewModel.CategoryViewModel(
+            categoryDisplayName: "Category",
+            articles: articles
+        )
         // when
         var state = await viewModel.$viewState.first().values.first(where: { _ in true })
 
@@ -33,7 +36,7 @@ final class ArticlesViewModelTests: XCTestCase {
 
         // then
         XCTAssertNotEqual(state, .loading)
-        XCTAssertEqual(state, .loaded(articles))
+        XCTAssertEqual(state, .loaded([model]))
 
         // when
         try? await viewModel.fetchArticles(url: nil)

@@ -16,6 +16,8 @@ extension ArticlesViewModel {
 
 extension Sequence where Iterator.Element == Article {
 
+    /// sortListElements
+    /// - Returns: Sorted [Article]
     func sortListElements() -> [Iterator.Element] {
         self.sorted { (item1, item2) -> Bool in
             return item1.timeStamp < item2.timeStamp
