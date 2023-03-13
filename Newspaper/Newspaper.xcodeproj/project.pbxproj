@@ -14,7 +14,6 @@
 		99E62CDC29B69F33001DA07C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E62CDB29B69F33001DA07C /* ContentView.swift */; };
 		99E62CDE29B69F36001DA07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E62CDD29B69F36001DA07C /* Assets.xcassets */; };
 		99E62CE129B69F36001DA07C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E62CE029B69F36001DA07C /* Preview Assets.xcassets */; };
-		99E62CEB29B69F36001DA07C /* NewspaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E62CEA29B69F36001DA07C /* NewspaperTests.swift */; };
 		99E62CF529B69F36001DA07C /* NewspaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E62CF429B69F36001DA07C /* NewspaperUITests.swift */; };
 		99E62CF729B69F36001DA07C /* NewspaperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E62CF629B69F36001DA07C /* NewspaperUITestsLaunchTests.swift */; };
 		99E62D0529B6A00E001DA07C /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E62D0429B6A00E001DA07C /* Configurations.swift */; };
@@ -68,7 +67,6 @@
 		99E62CDD29B69F36001DA07C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E62CE029B69F36001DA07C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		99E62CE629B69F36001DA07C /* NewspaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewspaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99E62CEA29B69F36001DA07C /* NewspaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewspaperTests.swift; sourceTree = "<group>"; };
 		99E62CF029B69F36001DA07C /* NewspaperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewspaperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E62CF429B69F36001DA07C /* NewspaperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewspaperUITests.swift; sourceTree = "<group>"; };
 		99E62CF629B69F36001DA07C /* NewspaperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewspaperUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				99E62D1329B6B7A5001DA07C /* TestExtensions */,
-				99E62CEA29B69F36001DA07C /* NewspaperTests.swift */,
 				99E62D0729B6A0B4001DA07C /* BaseURLTests.swift */,
 				99E62D0F29B6B70D001DA07C /* RelatedImagesTests.swift */,
 				99E62D1129B6B745001DA07C /* RelatedImage.json */,
@@ -412,7 +409,6 @@
 			files = (
 				99E62D0829B6A0B4001DA07C /* BaseURLTests.swift in Sources */,
 				99E62D2A29B95228001DA07C /* ArticlesViewModelTests.swift in Sources */,
-				99E62CEB29B69F36001DA07C /* NewspaperTests.swift in Sources */,
 				99E62D1F29B7F9DA001DA07C /* ArticleTests.swift in Sources */,
 				99E62D1029B6B70E001DA07C /* RelatedImagesTests.swift in Sources */,
 				99E62D2629B8384F001DA07C /* MockClient.swift in Sources */,
