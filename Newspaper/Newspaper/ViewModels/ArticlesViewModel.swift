@@ -61,7 +61,15 @@ class ArticlesViewModel: ObservableObject {
             if let response = try await client.fetch(url: url) {
                 let model = CategoryViewModel(
                     categoryDisplayName: response.displayName ?? "",
-                    articles: response.assets ?? []
+                    articles: response.assets?.map {
+                        ArticleViewModel(
+                            headline: $0.headline ?? "",
+                            theAbstract: $0.theAbstract ?? "",
+                            byLine: $0.byLine ?? "",
+                            thumbnailURL: ($0.thumbnail?.thumbnailURL)!,
+                            accessibility: $0.accessibility,
+                            link: $0.url)
+                    } ?? []
                 )
                 viewState = .loaded([model])
                 updateArticles()
@@ -95,7 +103,15 @@ extension ArticlesViewModel {
         let response = try JSONDecoder().decode(Articles.self, from: data)
         let model = CategoryViewModel(
             categoryDisplayName: response.displayName ?? "",
-            articles: response.assets ?? []
+            articles: response.assets?.map {
+                ArticleViewModel(
+                    headline: $0.headline ?? "",
+                    theAbstract: $0.theAbstract ?? "",
+                    byLine: $0.byLine ?? "",
+                    thumbnailURL: ($0.thumbnail?.thumbnailURL)!,
+                    accessibility: $0.accessibility,
+                    link: $0.url)
+            } ?? []
         )
         return model
     }

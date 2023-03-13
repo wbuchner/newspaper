@@ -13,7 +13,7 @@ struct ContentView: View {
     @StateObject private var viewModel = ArticlesViewModel()
 
     // The selected asset
-    @State private(set) var selectedItem : Article?
+    @State private(set) var selectedItem : ArticlesViewModel.ArticleViewModel?
 
     var body: some View {
         container {
@@ -56,7 +56,7 @@ private extension ContentView {
     // Addaptive colums with set width and Heights
     var columns: [GridItem] {
         return [
-            .init(.adaptive(minimum: 300, maximum: 400 ), alignment: .top)
+            .init(.adaptive(minimum: 300, maximum: .infinity ), alignment: .top)
         ]
     }
 
@@ -67,7 +67,7 @@ private extension ContentView {
             LazyVGrid(columns: columns, alignment: .leading, spacing: 0) {
                 ForEach(articles.first!.articles) { asset in
                     LazyVStack(alignment: .leading, spacing: 12) {
-                        KFImage.url(asset.thumbnail?.thumbnailURL)
+                        KFImage.url(asset.thumbnailURL)
                             .setProcessor(DefaultImageProcessor.default)
                             .placeholder {
                                 // Placeholder while downloading.
@@ -85,12 +85,12 @@ private extension ContentView {
                                 .shadow(radius: 5)
                                 .aspectRatio(contentMode: .fit)
                                 .accessibilityHidden(true)
-                        Text(asset.headline ?? "")
+                        Text(asset.headline)
                             .font(.headline)
-                        Text(asset.theAbstract ?? "")
+                        Text(asset.theAbstract)
                             .font(.title3)
                             .accessibilityHidden(true)
-                        Text(asset.byLine ?? "")
+                        Text(asset.byLine)
                             .font(.subheadline)
                             .accessibilityHidden(true)
                         Spacer()
@@ -102,7 +102,7 @@ private extension ContentView {
                     .onTapGesture {
                         $selectedItem.wrappedValue = asset
                     }.sheet(item: $selectedItem) { asset in
-                        LinkView(url: asset.url!)
+                        LinkView(url: asset.link)
                     }
                 }
             }

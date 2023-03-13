@@ -74,7 +74,7 @@ struct Article: Decodable, Equatable, Identifiable {
     let id: Int
     let categories: [Category]?
     let authors: [Author]?
-    let url: String?
+    let url: String
     let lastModified: Int?
     let sponsored: Bool?
     let headline: String?

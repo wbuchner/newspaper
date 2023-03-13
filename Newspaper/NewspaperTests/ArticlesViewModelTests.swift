@@ -22,7 +22,15 @@ final class ArticlesViewModelTests: XCTestCase {
         let articles: [Article] = try! Article.decode(file: "Article.json", bundle: .test)!
         let model = ArticlesViewModel.CategoryViewModel(
             categoryDisplayName: "Category",
-            articles: articles
+            articles: articles.map {
+                ArticlesViewModel.ArticleViewModel(
+                    headline: $0.headline ?? "",
+                    theAbstract: $0.theAbstract ?? "",
+                    byLine: $0.byLine ?? "",
+                    thumbnailURL: ($0.thumbnail?.thumbnailURL)!,
+                    accessibility: $0.accessibility,
+                    link: $0.url)
+            }
         )
         // when
         var state = await viewModel.$viewState.first().values.first(where: { _ in true })
