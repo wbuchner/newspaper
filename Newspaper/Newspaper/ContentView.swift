@@ -61,8 +61,8 @@ private extension ContentView {
     }
 
     // View displayed when the `ArticlesViewModel` viewState == .loaded
+    @MainActor
     func assetView(articles: [ArticlesViewModel.CategoryViewModel]) -> some View {
-
         ScrollView {
             LazyVGrid(columns: columns, alignment: .leading, spacing: 0) {
                 ForEach(articles.first!.articles) { asset in
