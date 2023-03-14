@@ -26,7 +26,7 @@ I have included Unit tests for inspection that tests:
 
 You can determine the process in which this application was built by interrogating the git log.
 
-I used Proxyman to locally map the data from the api `[https://eacp.energyaustralia.com.au/codingtest/api/v1/festivals](https://bruce-v2-mob.fairfaxmedia.com.au/1/coding_test/13ZZQX/full)`
+I used Proxyman to locally map the data from the api `[https://bruce-v2-mob.fairfaxmedia.com.au/1/coding_test/13ZZQX/full](https://bruce-v2-mob.fairfaxmedia.com.au/1/coding_test/13ZZQX/full)`
 # Success
 To trigger `success` add `HTTP/1.1 200 OK`
 
