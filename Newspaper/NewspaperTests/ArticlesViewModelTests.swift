@@ -89,8 +89,6 @@ final class ArticlesViewModelTests: XCTestCase {
     }
 
     func testAccessibility() async throws {
-        // A $28k ‘polish’ helped this north shore home break record by $1m by Michael Bleby, on Monday, March 13, 2023, Double tap to select article
-
         // given
         let viewModel = ArticlesViewModel(client: client)
         var state = await viewModel.$viewState.first().values.first(where: { _ in true })
