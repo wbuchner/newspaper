@@ -37,7 +37,6 @@ To trigger `failure` add `HTTP/1.1 400 Bad Request` to the header (or break the 
 1. Kingfisher. I use Kingfisher in commercial applications. It is a lightweight native Swift Library with excellent caching abilities and is extremely simple to use.
 
 ## Outcome
-#### A few known SwiftUI issues. Y
 1. Local strings. Given this is simple a coding challenge, for the limited number of strings required I opted to add them locally as opposed to setting up a Strings file.
 
 2. I went overboard mapping the JSON respponse. I could have halved my time, but I noticed some interesting issues like custom coding keys and haven't needed to build solutions for them in a long time and enjoyed the challenge. 
